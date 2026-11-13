@@ -126,7 +126,11 @@ async function HeroCta({
   );
 }
 
-export default function HomePage({ searchParams }: PageProps<"/">) {
+export default function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>;
+}) {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm">

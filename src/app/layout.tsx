@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
+import type { ReactNode } from "react";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     "Reserve your .alt domain with GitHub, bind a local Ed25519 owner key via dotALT CLI, and publish verifiable signed records to IPFS.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"

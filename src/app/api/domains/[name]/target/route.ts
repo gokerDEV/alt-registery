@@ -15,7 +15,7 @@ import { verifyTargetRecordSignature } from "@/lib/signing";
 
 export async function PUT(
   request: Request,
-  ctx: RouteContext<"/api/domains/[name]/target">,
+  ctx: { params: Promise<{ name: string }> },
 ) {
   try {
     const auth = await authenticateRequest(request, {
