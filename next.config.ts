@@ -58,6 +58,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Prevent Next.js Proxy adapter from relativizing `Location: https://alt.goker.dev/...`
+  // into `Location: /...` when dotALT forwards `https://register.alt` with `Host: alt.goker.dev`
+  // and `X-Alt-Domain: register.alt` (otherwise browsers loop on `https://register.alt/`).
+  skipProxyUrlNormalize: true,
   experimental: {
     agentFeedback: true,
   },

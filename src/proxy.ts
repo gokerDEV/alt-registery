@@ -18,6 +18,7 @@ export function proxy(request: NextRequest) {
       `${request.nextUrl.pathname}${request.nextUrl.search}`,
       APP_URL,
     );
+    destUrl.searchParams.delete("_rsc");
     return NextResponse.redirect(destUrl, 307);
   }
 
